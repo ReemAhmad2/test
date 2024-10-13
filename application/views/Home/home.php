@@ -88,7 +88,7 @@
 
 <h2><?php echo "البحث عن علامة طالب"; ?></h2>
 
-<?php echo form_open('result'); ?>
+<?php echo form_open('search'); ?>
 
 <label for="name"> اسم الطالب </label>
 <input type="text" name="name" value="<?php echo $name ?? '' ?>" /><br />
@@ -97,22 +97,3 @@
     النتيجة
 </button>
 </form>
-
-<?php
-if ($rows != null && $name != null):
-?>
-    <table>
-        <tr>
-            <th>الدرجة</th>
-            <th>الاسم</th>
-        </tr>
-        <?php
-        foreach ($rows as $row): ?>
-            <tr>
-                <td><?php echo $row->grade ?> </td>
-                <td><?php echo $row->name ?> </td>
-            </tr>
-
-        <?php endforeach ?>
-    </table>
-<?php endif; ?>
